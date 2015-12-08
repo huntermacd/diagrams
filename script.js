@@ -1,4 +1,4 @@
-var game = new Phaser.Game(240, 400, Phaser.CANVAS, '', {preload: preload, create: create, update: update});
+var game = new Phaser.Game(240, 400, Phaser.CANVAS, 'container', {preload: preload, create: create, update: update});
 
 var dl_link;
 var save_link = document.getElementById('save');
@@ -57,7 +57,6 @@ function create(){
                 one_1, one_2, one_3, one_4, one_5, one_6];
 
     for (var i = 0; i < notes.length; i++) {
-        notes[i].frame = 0;
         notes[i].inputEnabled = true;
         notes[i].events.onInputDown.add(change_frame, this);
     };
@@ -78,6 +77,12 @@ function change_frame(sprite){
         dl_link = game.canvas.toDataURL();
         save_link.setAttribute("href", dl_link);
     }, 500);
+}
+
+function clear_notes(){
+    for (var i = 0; i < notes.length; i++) {
+        notes[i].frame = 0;
+    };
 }
 
 function update(){

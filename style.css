@@ -1,4 +1,19 @@
+canvas,
+#save,
+#clear {
+    margin: 10px auto;
+}
+
 canvas {
     border: 1px solid black;
-    margin: 0 auto;
+}
+
+#save {
+    display: table;
+}
+
+#clear {
+    background-image: url('clear.png');
+    height: 50px;
+    width: 190px;
 }
